@@ -10,6 +10,7 @@
     "@slidev/cli": "^0.42.4",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
+    "slidev-theme-dracula": "^0.1.0",
     "xterm": "^5.2.1"
   }
 }
