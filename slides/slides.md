@@ -1,6 +1,5 @@
 ---
-theme: seriph
-background: https://source.unsplash.com/collection/94734566/1920x1080
+background: './images/zenika-stary-night-background.png'
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -12,7 +11,7 @@ info: |
 drawings:
   persist: false
 transition: slide-left
-title: Welcome to Slidev
+title: meili101
 ---
 
 # meili101
@@ -25,22 +24,13 @@ Présentation de MeiliSearch
   </span>
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 
 ---
-transition: fade-out
+layout: image-right
+
+# the image source
+image: ./images/profile-bis.jpg
+
 ---
 
 # Présentation
@@ -52,32 +42,9 @@ Vivian SARAZIN
 - TypeScript enthousiast
 - Vue fan
 
-<br>
-<br>
-
-L'outil de [présentation](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
+<div class="pt-72 text-xs text-right">
+  <carbon:camera class="inline" /> Alex Palma
+</div>
 ---
 layout: default
 ---
@@ -87,18 +54,45 @@ layout: default
 <Toc></Toc>
 
 ---
-transition: slide-up
+layout: cover
 
 level: 1
 ---
+
 
 # MeiliSearch c'est quoi?
 
+<v-clicks>
+
 - Moteur de recherche
 - Français
+- Création 2018
 - Rust
 - Open Source
 - 37.1k 🌟
+- Levée de fonds de 15M€ (fin 2022)
+
+</v-clicks>
+
+---
+layout: cover
+
+level: 1
+---
+
+# Mais en quoi c'est bien ?
+
+<v-clicks>
+
+- Typo tolerant
+- Faaaaaaaaaaaast
+- Easy setup
+- Production-ready
+- Community
+- AIS
+- "Free"
+
+</v-clicks>
 
 ---
 transition: slide-up
@@ -106,33 +100,40 @@ transition: slide-up
 level: 1
 ---
 
-# meili101
+# Pokedex
 
-https://github.com/VivianZenika/meili101
 
-Pokedex
+<div class="pb-8">
+  <carbon:link class="inline"/>
+  https://github.com/VivianZenika/meili101
+</div>
+
+
+## Structure
+
+<v-clicks>
 
 - slides
 - back
-  - Seeder qui va se charger d'indexer les Pokemons dans MeiliSearch
+  - "seeder" qui va se charger d'indexer les Pokemons dans MeiliSearch
 - front
   - Notre interface qui va nous permettre de rechercher nos Pokémons
 - services
   - Les fichiers pour déclarer et utiliser les services
-
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# 
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|1|3-10|12}
-const client = new MeiliSearch('http://localhost:7700', 'masterKey')
   
+</v-clicks>
+
+
+---
+
+# TL;DR
+
+
+```ts {all|2|4-12|15}
+// init the client
+const client = new MeiliSearch('http://localhost:7700', 'masterKey')
+
+// let's add some stuff in there
 await client.index('movies').addDocuments([
   { 'id': 1, 'title': 'Carol' },
   { 'id': 2, 'title': 'Wonder Woman' },
@@ -141,27 +142,15 @@ await client.index('movies').addDocuments([
   { 'id': 5, 'title': 'Moana' },
   { 'id': 6, 'title': 'Philadelphia'}
 ])
-    
+
+// give a spin :)    
 const search = await index.search('philodelphia')
+
+
 ```
+---
+layout: end
 
 ---
 
-# tutu
-
-```ts {monaco}
-import MeiliSearch from 'meilisearch'
-const client = new MeiliSearch('http://localhost:7700', 'masterKey')
-  
-await client.index('movies').addDocuments([
-  { 'id': 1, 'title': 'Carol' },
-  { 'id': 2, 'title': 'Wonder Woman' },
-  { 'id': 3, 'title': 'Life of Pi' },
-  { 'id': 4, 'title': 'Mad Max: Fury Road' },
-  { 'id': 5, 'title': 'Moana' },
-  { 'id': 6, 'title': 'Philadelphia'}
-])
-    
-const search = await index.search('philodelphia')
-```
-
+# Let's give a spin
