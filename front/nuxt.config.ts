@@ -17,7 +17,8 @@ export default defineNuxtConfig({
     adminApiKey: process.env.MEILISEARCH_MASTER_KEY,
     serverSideUsage: true,
     instantSearch: {
-      theme: "algolia",
+      // theme: "reset",
+      theme: "satellite",
     },
   },
   runtimeConfig: {

@@ -2,6 +2,8 @@
 import GlobalHeading from "../global/Heading.vue";
 import GlobalButton from "../global/Button.vue";
 
+import { AisHighlight } from "vue-instantsearch/vue3/es";
+
 import { useTeamStore } from "~/store/team";
 import type { Pokemon } from "~/interfaces/Pokemon";
 
@@ -69,7 +71,11 @@ const btnPokemonTeamText = computed(() => {
         :alt="`${name} front default`"
         class="h-32 w-auto md:h-64 mx-auto"
       />
-      <GlobalHeading color="text-lightYellow" padding="py-2" :content="name" />
+      <ais-highlight
+        attribute="name"
+        :hit="attributes"
+        class="text-deepYellow text-xl capitalize"
+      />
       <div class="my-2">
         <p class="text-deepYellow text-sm">Height {{ height }}</p>
         <p class="text-deepYellow text-sm">Weight {{ weight }}</p>

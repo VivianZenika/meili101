@@ -1,12 +1,7 @@
 <script lang="ts" setup>
 import Heading from "~/components/global/Heading.vue";
 import PokemonCard from "~/components/pokemon/Card.vue";
-const props = defineProps({
-  client: {
-    type: Object,
-    required: true,
-  },
-});
+
 import {
   AisInstantSearch,
   AisConfigure,
@@ -16,6 +11,13 @@ import {
   AisStats,
   AisPagination,
 } from "vue-instantsearch/vue3/es";
+
+defineProps({
+  client: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
@@ -31,12 +33,17 @@ import {
       show-loading-indicator
     />
     <div class="flex flex-col lg:flex-row">
-      <div id="sidebar">
-        <Heading color="text-lightYellow" padding="pt-8" content="Filters" />
+      <!-- <div id="sidebar">
         <Heading
-          :heading-level="3"
+          :heading-level="2"
+          color="text-lightYellow"
+          padding="pt-8 pb-4"
+          content="Filters"
+        />
+        <Heading
+          :heading-level="2"
           color="text-deepYellow"
-          padding="py-2"
+          padding="py-4"
           content="Height"
         />
         <ais-range-input
@@ -45,9 +52,9 @@ import {
           :max="10000"
         />
         <Heading
-          :heading-level="3"
+          :heading-level="2"
           color="text-deepYellow"
-          padding="py-2"
+          padding="py-4"
           content="Weight"
         />
         <ais-range-input
@@ -55,19 +62,19 @@ import {
           attribute="weight"
           :max="10000"
         />
-      </div>
+      </div> -->
       <div id="results" class="w-full pt-2">
         <ais-stats class="text-white text-right my-2" />
         <ais-hits>
           <template #default="{ items }">
-            <div class="grid grid-cols-1 xl:grid-cols-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
               <div v-for="item in items" :key="item.id" class="my-1 md:m-2">
                 <PokemonCard :attributes="item" />
               </div>
             </div>
           </template>
         </ais-hits>
-        <ais-pagination />
+        <ais-pagination class="py-8" />
       </div>
     </div>
   </ais-instant-search>

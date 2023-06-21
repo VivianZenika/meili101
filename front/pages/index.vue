@@ -34,7 +34,7 @@ const flushTeam = () => {
 <template>
   <div>
     <GlobalHeading
-      :heading-level="1"
+      :heading-level="2"
       color="text-lightYellow"
       padding="pt-16 pb-8"
       class="text-center"
