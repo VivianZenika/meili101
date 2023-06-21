@@ -1,4 +1,4 @@
-import { fetch, post } from "../functions";
+import { fetch, post, token } from "../functions";
 import { pokeapiBaseUrl } from "../config";
 import type { Pokemon, PokemonsAPIResponse } from "../types/";
 
@@ -13,6 +13,7 @@ export class PokemonSeeder {
 
   constructor() {
     console.log("### Initializing PokemonSeeder... ###");
+    // console.log({ token });
     this.start();
   }
 
