@@ -60,17 +60,17 @@ level: 1
 ---
 
 
-# MeiliSearch c'est quoi?
+# MeiliSearch c'est quoi ?
 
 <v-clicks>
 
 - Moteur de recherche
 - Français
-- Création 2018
-- Rust
 - Open Source
-- 37.1k 🌟
+- Rust
+- Création 2018
 - Levée de fonds de 15M€ (fin 2022)
+- 37.2k 🌟
 
 </v-clicks>
 
@@ -85,11 +85,11 @@ level: 1
 <v-clicks>
 
 - Typo tolerant
-- Faaaaaaaaaaaast
+- Fast
 - Easy setup
 - Production-ready
 - Community
-- AIS
+- Algolia Instant Search
 - "Free"
 
 </v-clicks>
